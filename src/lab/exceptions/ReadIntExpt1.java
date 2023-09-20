@@ -1,4 +1,4 @@
-package labs.exceptions;
+package lab.exceptions;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
