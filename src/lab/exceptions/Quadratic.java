@@ -1,4 +1,5 @@
 package lab.exceptions;
+import java.lang.Math;
 
 /**
  * Quadratic expressions (of the form ax^2 + bx + c).
@@ -71,8 +72,17 @@ public class Quadratic {
   /**
    * Find the smaller of the two roots.
    */
-  public double smallerRoot() {
-    return 0;   // STUB
+  public double smallerRoot() throws Exception {
+    if (a == 0) {
+      throw new DivideByZeroException("First coefficient must be greater than zero.");
+    } // if (a == 0)
+
+    double discriminant = b * b - 4 * a * c;
+    if (discriminant < 0) {
+      throw new Exception("b^2 - 4ac is negative");
+    }
+
+    return ((-b) - Math.sqrt(discriminant)) / (2 * a);
   } // smallerRoot
 
   /**
